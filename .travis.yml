@@ -13,7 +13,7 @@ before_install:
 - export TZ=Australia/Canberra
 - date
 - mkdir -p ~/.m2; wget -q -O ~/.m2/settings.xml https://raw.githubusercontent.com/AtlasOfLivingAustralia/travis-build-configuration/master/travis_maven_settings.xml
-after_success: '[ "${TRAVIS_PULL_REQUEST}" = "false" ] && mvn deploy'
+after_success: '[ "${TRAVIS_PULL_REQUEST}" = "false" ] && mvn deploy -DskipTests=true'
 env:
   global:
   - secure: iAE6fYXASL87o0wB1iV1/IvHRKrsvmVW+DiOQr+uMlRg/D3WmoQWYlkKQ4S1tK6y+9wUiQswLZOObnFnqeZEO+o3ArJ3frY+DgPMna4R5+Wp0BRPGzE7zYZu25Oi/aeKj26NPiVlKUmmL2ZcxPun9dzykPXgyJntlZWQAhdQAgeWEEDTOHmSMj4y3eLnnd/ZPpA2bkUUZ8EV+cXaQXCKlVFa7LmLEtEAvR9Ux+tYqbMCEvr/TBuuj92WCCAyDqsaYpIWLBzT05KYzFSj3C9zGABe0F2vp+rrrCCwvSpPD608HbZSSwWpJZWV2U5k0l5ZNdEHLNIVx4+/Oc8EXiqPm6/PYwkjAfLv5lSlTLhu/wJEaeAYDsrtYC03g0TzNG64n1UqoEQcV50tB7Gexe6+w2OSvJPIMDMpNIrKrbKWb9eCisMLbrlwNq27CwCjvxQLsir6G+YGLXAy3kLagwSTP0tAKPHcCwsFf+NdWb14ztRU8WSsUygCgdE2N6Pjbzxwa6hWpIMD58tx4NXQKxRkv55Te6lWX0fTKpUzheGCcRKJD3O+gZKR0BhzP2fmGkbObtEOEnRkpfXkLTY8XtjilT/FR4vX+xRF4ueY4LBWpRh/4+VGkYzx6FY3cVgsVPFGFZL3GNpMbjyQCJ35Trca1Ux11N3BJdAdG/BEvi4wUfk=
