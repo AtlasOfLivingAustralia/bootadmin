@@ -120,6 +120,8 @@
 				<configuration>
 					<mainClass>au.org.ala.bootadmin.BootadminApplicationKt</mainClass>
 					<addResources>false</addResources>
+                    <classifier>exec</classifier>
+                    <executable>true</executable>
 				</configuration>
 			</plugin>
 			<plugin>
