@@ -16,6 +16,10 @@
 
 	<name>ALA Spring Boot Admin</name>
 	<description>ALA Spring Boot Admin</description>
+    <scm>
+        <connection>scm:git:https://github.com/AtlasOfLivingAustralia/bootadmin.git</connection>
+        <url>https://github.com/AtlasOfLivingAustralia/bootadmin</url>
+    </scm>
 
 	<properties>
         <spring.boot.version>1.5.6.RELEASE</spring.boot.version>
@@ -100,8 +104,16 @@
 	</dependencies>
 
 	<build>
-		<sourceDirectory>${project.basedir}/src/main/kotlin</sourceDirectory>
-		<testSourceDirectory>${project.basedir}/src/test/kotlin</testSourceDirectory>
+        <resources>
+            <resource>
+                <directory>src/main/resources/</directory>
+                <filtering>true</filtering>
+                <includes>
+                    <include>**/*.yml</include>
+                    <include>**/*.properties</include>
+                </includes>
+            </resource>
+        </resources>
 		<plugins>
 			<plugin>
 				<groupId>com.rimerosolutions.maven.plugins</groupId>
@@ -117,8 +129,8 @@
 				<executions>
 					<execution>
 						<goals>
-							<goal>repackage</goal>
 							<goal>build-info</goal>
+							<goal>repackage</goal>
 						</goals>
 					</execution>
 				</executions>
